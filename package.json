@@ -1,0 +1,58 @@
+{
+  "name": "aki-bot",
+  "version": "1.0.0",
+  "description": "A Discord bot that displays various information about Yu-Gi-Oh! cards.",
+  "main": "dist/index.js",
+  "repository": "https://github.com/segfault0x61/aki-bot",
+  "author": "Joshua Torres",
+  "license": "MIT",
+  "scripts": {
+    "start": "node --enable-source-maps --unhandled-rejections=strict -r dotenv/config dist",
+    "dev-windows": "@powershell -Command $env:DEBUG='*';ts-node -r dotenv/config ./src/index.ts",
+    "build": "tsc",
+    "clean": "tsc --build --clean",
+    "test": "jest",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "prettier": "prettier --check **/*.ts",
+    "prettier:fix": "prettier --write **/*.ts"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.23",
+    "@types/debug": "^4.1.7",
+    "@types/eslint": "^8.4.1",
+    "@types/eslint-config-prettier": "^6.11.0",
+    "@types/eslint-plugin-prettier": "^3.1.0",
+    "@types/node": "^18.0.4",
+    "@types/ws": "^8.5.3",
+    "@typescript-eslint/eslint-plugin": "^5.30.6",
+    "@typescript-eslint/parser": "^5.30.6",
+    "eslint": "^8.19.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^16.1.4",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^27.0.6",
+    "prettier": "^2.7.1",
+    "ts-jest": "^27.0.3",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "@discordjs/builders": "^0.15.0",
+    "@discordjs/rest": "^0.5.0",
+    "debug": "^4.3.4",
+    "discord.js": "^13.8.1",
+    "dotenv": "^16.0.1",
+    "shapeshift": "^1.0.2",
+    "supports-color": "^9.2.2"
+  },
+  "jest": {
+    "clearMocks": true,
+    "collectCoverage": true,
+    "coverageDirectory": "coverage",
+    "coverageProvider": "v8",
+    "preset": "ts-jest"
+  }
+}
